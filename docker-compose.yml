@@ -1,0 +1,13 @@
+services:
+   mysql: #Criando um serviço do POSTGRESQL
+       image: mysql:latest #Imagem que será instalada no DOCKER
+       environment: #Configurações do ambiente do POSTGRESQL
+           MYSQL_USER: user_coti #Usuário administrador do banco de dados
+           MYSQL_ROOT_PASSWORD: coti #Senha do usuário administrador
+           MYSQL_PASSWORD: coti #Senha do usuário local
+           MYSQL_DATABASE: bd_apiclientes
+       ports: #Configurações de portas
+           - "3306:3306" #[Porta para acesso externo]:[Porta interna do conteiner]
+networks: #Configurando um serviço de rede
+   default: #Definindo o padrão de rede
+      driver: bridge #Tipo de rede: Compartilhada

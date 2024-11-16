@@ -6,7 +6,7 @@ CREATE TABLE cliente(
 	nome 		VARCHAR(150) 	NOT NULL,
 	cpf			VARCHAR(14)		NOT NULL UNIQUE,
 	telefone 	VARCHAR(20) 	NOT NULL,
-	email	 	VARCHAR(50) 	NOT NULL,
+	email	 	VARCHAR(50) 	NOT NULL
 );
 
 DESC cliente;

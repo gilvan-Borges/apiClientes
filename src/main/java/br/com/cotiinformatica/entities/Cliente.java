@@ -2,6 +2,7 @@ package br.com.cotiinformatica.entities;
 
 import java.util.UUID;
 
+import br.com.cotiinformatica.enums.TipoCliente;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,4 +20,5 @@ public class Cliente {
 	private String cpf;
 	private String telefone;
 	private String email;
+	private TipoCliente tipo;
 }

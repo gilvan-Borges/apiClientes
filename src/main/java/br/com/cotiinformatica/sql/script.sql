@@ -11,10 +11,20 @@ CREATE TABLE cliente(
 
 DESC cliente;
 
-----------------------------------------------------------------------
+ALTER TABLE cliente
+ADD COLUMN tipo VARCHAR(25) NOT NULL DEFAULT 'Outros';
 
+----------------------------------------------------------------------
 use bd_apiclientes;
 
+select
+	tipo,
+	COUNT(*) as quantidades
+FROM cliente
+GROUP BY tipo;
+
+
+----------------------------------------------------------------------
 #consulta para exibir todos os clientes
 select * from cliente order by nome;
 

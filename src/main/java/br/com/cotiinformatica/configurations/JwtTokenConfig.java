@@ -12,6 +12,8 @@ public class JwtTokenConfig {
 		FilterRegistrationBean<JwtTokenFilter> filter = new FilterRegistrationBean<JwtTokenFilter>();
 		filter.setFilter(new JwtTokenFilter());
 		filter.addUrlPatterns("/api/clientes/*");
+		filter.addUrlPatterns("/api/tipos/*");
+		filter.addUrlPatterns("/api/dashboard/*");
 		return filter;
 	}
 }

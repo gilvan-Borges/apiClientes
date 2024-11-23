@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.cotiinformatica.dtos.ClienteRequestDto;
 import br.com.cotiinformatica.entities.Cliente;
+import br.com.cotiinformatica.enums.TipoCliente;
 import br.com.cotiinformatica.repositories.ClienteRepository;
 
 @RestController // define a classe como um controlador API (Spring Boot)
@@ -36,6 +37,7 @@ public class ClienteController {
 		cliente.setCpf(request.getCpf());
 		cliente.setTelefone(request.getTelefone());
 		cliente.setEmail(request.getEmail());
+		cliente.setTipo(TipoCliente.valueOf(request.getTipo()));
 
 		// gravar o cliente no banco de dados
 		var clienteRepository = new ClienteRepository();
@@ -67,7 +69,7 @@ public class ClienteController {
 			cliente.setCpf(request.getCpf());
 			cliente.setTelefone(request.getTelefone());
 			cliente.setEmail(request.getEmail());
-			;
+			cliente.setTipo(TipoCliente.valueOf(request.getTipo()));
 			
 			if(!clienteRepository.isExists(cliente.getCpf(), cliente.getId())) {
 				clienteRepository.update(cliente);			
